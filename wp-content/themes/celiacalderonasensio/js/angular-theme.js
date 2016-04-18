@@ -12,13 +12,19 @@ wpApp.factory('Pages', function($resource) {
 
 wpApp.controller('FashionCtrl', ['$scope', 'Posts', function($scope, Posts) {
 	console.log('works');
-	$scope.page_title = 'Blog Listing';
+	// $scope.page_title = 'Blog Listing';
+ //    Posts.query(function(res) {
+ //    	$scope.posts = res;
+ //    });
+	console.log('FashionCtrl');
     Posts.query(function(res) {
     	$scope.posts = res;
+    	console.log($scope.posts);
     });
 }])
 
 wpApp.controller('OtherCtrl', ['$scope', 'Posts', function($scope, Posts) {
+	console.log('works');
 	console.log('OtherCtrl');
     Posts.query(function(res) {
     	$scope.posts = res;
@@ -33,7 +39,7 @@ wpApp.controller('ProjectCtrl', ['$scope', '$stateParams', 'Posts', function($sc
 		$scope.post = res;
 		console.log(res);
 	})
-	
+
 }])
 
 wpApp.controller('AboutCtrl', ['$scope', '$stateParams', 'Pages', function($scope, $stateParams, Pages) {
@@ -57,7 +63,7 @@ wpApp.config(function($stateProvider, $urlRouterProvider) {
 	       	   templateUrl: appInfo.template_directory + 'templates/other.html'
 	       })
 	       .state('project', {
-	        	url: '/fashion/:id',
+	        	url: '/:id',
 	        	controller: 'ProjectCtrl',
 	        	templateUrl: appInfo.template_directory + 'templates/project.html'
 	        })
