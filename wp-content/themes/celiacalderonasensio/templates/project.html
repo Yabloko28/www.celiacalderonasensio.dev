@@ -1,9 +1,9 @@
 <!-- <pre><code>{{post | json }}</code></pre> -->
 <article class="detail">
-<a href="/" ng-show="post.categories == 2"><img src="http://image005.flaticon.com/75/svg/70/70429.svg" style="width: 10em;"></a>
-<a href="#/other-projects" ng-show="post.categories == 3"><img src="http://image005.flaticon.com/75/svg/70/70429.svg" style="width: 10em;"></a>
+<a href="/" ng-show="post.categories == 2" class="back-button"><img src="http://nadyascreatures.com/images/back-to-projects-arrow.jpg"></a>
+<a href="#/other-projects" ng-show="post.categories == 3" class="back-button"><img src="http://nadyascreatures.com/images/back-to-projects-arrow.jpg"></a>
 
-   <h2 class="project-title">{{post.title.rendered}}</h2>
+<h2 class="project-title">{{post.title.rendered}}</h2>
 <!--    <p>{{post.acf.main_image}}</p> -->
 <!--    <img ng-src="{{post.acf.main_image}}"> -->
    <div ng-bind-html="post.content.rendered | to_trusted" class="content-images"></div>

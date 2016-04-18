@@ -1,6 +1,6 @@
 <!-- <pre><code>{{posts | json }}</code></pre> -->
-<ul isotope-container="isotope-container">
-<li ng-repeat="post in posts | filter: post.categories" ng-show="post.categories == 2" isotope-item="isotope-item">
+<ul masonry>
+<li ng-repeat="post in posts | filter: post.categories" ng-show="post.categories == 2" class="masonry-brick">
    <a ui-sref="project({id:post.id})" >
         <div class="project-icon">
             <img src="{{ post.acf.main_image }}">

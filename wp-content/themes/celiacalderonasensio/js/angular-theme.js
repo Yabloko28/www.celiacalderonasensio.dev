@@ -43,9 +43,10 @@ wpApp.controller('ProjectCtrl', ['$scope', '$stateParams', 'Posts', function($sc
 }])
 
 wpApp.controller('AboutCtrl', ['$scope', '$stateParams', 'Pages', function($scope, $stateParams, Pages) {
+	 console.log('I am working');
 	 Pages.query(function(res) {
     	$scope.page = res[0];
-    	console.log($scope.page.content.rendered);
+    	console.log($scope.page);
     });
 }])
 
@@ -57,6 +58,11 @@ wpApp.config(function($stateProvider, $urlRouterProvider) {
 	       	   controller: 'FashionCtrl',
 	       	   templateUrl: appInfo.template_directory + 'templates/fashion.html'
 	       })
+	       	.state('about', {
+	        	url: '/about',
+	        	controller: 'AboutCtrl',
+	        	templateUrl: appInfo.template_directory + 'templates/about.html'
+	        })
 	       .state('other-projects', {
 	       	   url: '/other-projects',
 	       	   controller: 'OtherCtrl',
@@ -66,11 +72,6 @@ wpApp.config(function($stateProvider, $urlRouterProvider) {
 	        	url: '/:id',
 	        	controller: 'ProjectCtrl',
 	        	templateUrl: appInfo.template_directory + 'templates/project.html'
-	        })
-	       .state('about', {
-	        	url: '/about',
-	        	controller: 'AboutCtrl',
-	        	templateUrl: appInfo.template_directory + 'templates/about.html'
 	        })
 })
 
