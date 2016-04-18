@@ -15,9 +15,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'celiacalderonasensio' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'celiacalderonasensio' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'celiacalderonasensio' ), 'celiacalderonasensio', '<a href="http://nadyascreatures.com" rel="designer">Nadya Eidelstein</a>' ); ?>
+			<p>
+				&copy; 2016 Celia Calderon Asensio. Site by <a href="http://nadyascreatures.com">Nadya Eidelstein.</a>
+			</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

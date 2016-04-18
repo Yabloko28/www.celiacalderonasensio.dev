@@ -21,21 +21,25 @@
 </head>
 
 <body <?php body_class(); ?>>
+<a name="top"></a>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'celiacalderonasensio' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			
 	
-				<h1 class="site-title"><img src="http://nadyascreatures.com/images/name.png"></h1>
+				<h1 class="site-title"><a href="#/" class="fashion-icon"><img src="http://nadyascreatures.com/images/name.png"></a></h1>
 	
 		</div>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<a href="#/"><img src="http://nadyascreatures.com/images/fashion-thin.jpg"><img src="http://nadyascreatures.com/images/fashion-bold.jpg"></a>
-			<a href="#/other-projects"><img src="http://nadyascreatures.com/images/other-projects-thin.jpg"><img src="http://nadyascreatures.com/images/other-projects-bold.jpg"></a>
-			<a href="#/about"><img src="http://nadyascreatures.com/images/about-cv-thin.jpg"><img src="http://nadyascreatures.com/images/about-cv-bold.jpg"></a>
+			<a href="#/" class="fashion-icon"><img src="http://nadyascreatures.com/images/fashion-thin.jpg" class="thin"><img src="http://nadyascreatures.com/images/fashion-bold.jpg" class="bold"></a>
+			<a href="#/other-projects" class="other-projects-icon"><img src="http://nadyascreatures.com/images/other-projects-thin.jpg" class="thin"><img src="http://nadyascreatures.com/images/other-projects-bold.jpg" class="bold"></a>
+			<a href="#/about" class="about-cv-icon"><img src="http://nadyascreatures.com/images/about-cv-thin.jpg" class="thin"><img src="http://nadyascreatures.com/images/about-cv-bold.jpg" class="bold"></a>
 		</nav><!-- #site-navigation -->
+		<div class="contact-details">
+			<p class="email"><a href="mailto:asensiocelia@yahoo.es" target="_blank"><img src="http://nadyascreatures.com/images/email.jpg"></a></p>
+			<p class="tel-number"><img src="http://nadyascreatures.com/images/tel-number.jpg"></p>
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
