@@ -114,5 +114,16 @@
  //      });
 
  //    });
-alert('working');
+    var open = false;
+    $('.menu-icon, .main-navigation > a').click(function() {
+    	if (open == false) {
+    	    $('.sliding-menu').slideDown( 400, function() {
+ });
+    	    open = true;
+        } else {
+        	$('.sliding-menu').slideUp( 400, function() {
+ }); 
+        	open = false;
+        }
+    })
 }) (jQuery);

@@ -273,6 +273,13 @@ ul, li {
   position: fixed;
   width: 100%;
 }
+@media only screen and (min-width: 0) and (max-width: 60.625em) {
+  .site-header {
+    -webkit-box-shadow: 0px 0px 11px 1px #d1cfd1;
+    -moz-box-shadow: 0px 0px 11px 1px #d1cfd1;
+    box-shadow: 0px 0px 11px 1px #d1cfd1;
+  }
+}
 @media only screen and (min-width: 60.625em) {
   .site-header {
     width: 40%;
@@ -342,6 +349,14 @@ ul, li {
     display: none;
   }
 }
+.site-header .sliding-menu {
+  display: none;
+}
+@media only screen and (min-width: 60.625em) {
+  .site-header .sliding-menu {
+    display: block;
+  }
+}
 .site-header .main-navigation {
   margin-top: 2em;
   min-height: 13em;
@@ -350,6 +365,7 @@ ul, li {
   .site-header .main-navigation {
     margin-top: 0;
     min-height: 17em;
+    display: block;
   }
 }
 .site-header .main-navigation .thin, .site-header .main-navigation .bold {
@@ -387,6 +403,11 @@ ul, li {
 .site-header .contact-details {
   text-align: center;
 }
+@media only screen and (min-width: 60.625em) {
+  .site-header .contact-details {
+    display: block;
+  }
+}
 .site-header .contact-details .email img, .site-header .contact-details .tel-number img {
   margin-top: 1em;
 }
@@ -406,6 +427,9 @@ ul, li {
 }
 .site-header .contact-details .email:hover img {
   -webkit-filter: blur(2px);
+}
+.site-header .opened {
+  display: block;
 }
 .site-header .line {
   display: none;
@@ -438,6 +462,21 @@ ul, li {
     margin-left: 2.5%;
     margin-right: 2.5%;
   }
+}
+.site-content ul.ng-scope {
+  margin-top: 6em;
+}
+@media only screen and (min-width: 30em) and (max-width: 38em) {
+  .site-content ul.ng-scope {
+    margin-top: 8em;
+  }
+}
+@media only screen and (min-width: 38em) and (max-width: 60.625em) {
+  .site-content ul.ng-scope {
+    margin-top: 10em;
+  }
+}
+@media only screen and (min-width: 60.625em) {
   .site-content ul.ng-scope {
     margin-top: 2em;
     margin-left: 10%;
@@ -496,17 +535,27 @@ ul, li {
 # Project
 --------------------------------------------------------------*/
 article.detail {
-  margin-top: 2.5em;
+  margin-top: 6em;
+}
+@media only screen and (min-width: 30em) and (max-width: 60.625em) {
+  article.detail {
+    margin-top: 8em;
+  }
+}
+@media only screen and (min-width: 60.625em) {
+  article.detail {
+    margin-top: 2em;
+  }
 }
 article.detail h2.project-title {
-  margin-right: 5%;
   display: block;
   text-align: center;
-  margin-top: 1.5em;
+  margin-top: 0;
   margin-bottom: 0;
 }
 @media only screen and (min-width: 60.625em) {
   article.detail h2.project-title {
+    margin-right: 5%;
     width: 64%;
     display: inline-block;
     text-align: right;
@@ -562,6 +611,24 @@ article.detail .back-button:hover img {
 /*--------------------------------------------------------------
 # Abour / CV
 --------------------------------------------------------------*/
+.about-page {
+  margin-top: 7em;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 38em) and (max-width: 48em) {
+  .about-page {
+    width: 80%;
+    margin-top: 10em;
+  }
+}
+@media only screen and (min-width: 48em) and (max-width: 60.625em) {
+  .about-page {
+    width: 70%;
+    margin-top: 10em;
+  }
+}
 @media only screen and (min-width: 60.625em) {
   .about-page {
     margin-top: 8em;
@@ -571,7 +638,12 @@ article.detail .back-button:hover img {
   }
 }
 .about-page .cv {
-  margin-left: 35%;
+  margin-left: 30%;
+}
+@media only screen and (min-width: 38em) {
+  .about-page .cv {
+    margin-left: 35%;
+  }
 }
 .about-page .cv img {
   -webkit-transition: all 0.5s ease;
@@ -579,9 +651,14 @@ article.detail .back-button:hover img {
   -o-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  margin-top: 5em;
+  margin-top: 3em;
   margin-bottom: 5em;
   width: 7em;
+}
+@media only screen and (min-width: 38em) {
+  .about-page .cv img {
+    margin-top: 5em;
+  }
 }
 .about-page .cv:hover img {
   -webkit-filter: blur(2px);
@@ -591,6 +668,8 @@ article.detail .back-button:hover img {
 # Footer
 --------------------------------------------------------------*/
 .site-footer {
+  position: relative;
+  bottom: 0;
   text-align: center;
   width: 100%;
   position: relative;

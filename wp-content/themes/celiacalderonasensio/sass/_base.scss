@@ -21,6 +21,11 @@ ul, li {
 --------------------------------------------------------------*/
 
 .site-header {
+	@include break(0, 60.625em) {
+-webkit-box-shadow: 0px 0px 11px 1px rgba(209,207,209,1);
+-moz-box-shadow: 0px 0px 11px 1px rgba(209,207,209,1);
+box-shadow: 0px 0px 11px 1px rgba(209,207,209,1);
+    }
 	background: white;
 	z-index: 20;
 	position: fixed;
@@ -80,12 +85,18 @@ ul, li {
         	display: none;
         }
     }
+    .sliding-menu {
+    	display: none;
+    	@include break(60.625em) {
+    		display: block;
+    	}
+    }
     .main-navigation {
-    	// display: none;
     	margin-top: 2em;
     	@include break(60.625em) {
     		margin-top: 0;
     		min-height: 17em;
+    		display: block;
     	}
     	min-height: 13em;
     	.thin, .bold {
@@ -118,7 +129,9 @@ ul, li {
     	}
     }
     .contact-details {
-    	// display: none;
+    	@include break(60.625em) {
+    		display: block;
+    	}
     	text-align: center;
     	.email img, .tel-number img {
     		margin-top: 1em; 
@@ -143,7 +156,10 @@ ul, li {
             }
         }
     }
-        .line {
+    .opened {
+        display: block;
+    }
+    .line {
     	display: none;
     	@include break(60.625em) {
     		display: block;
@@ -169,8 +185,17 @@ ul, li {
 	    left: 40%;
 	    margin-left: 2.5%;
 	    margin-right: 2.5%;
-	    ul.ng-scope {
-            margin-top: 2em;
+	}
+	ul.ng-scope {
+	    margin-top: 6em;
+	    @include break(30em, 38em) {
+	        margin-top: 8em;
+	    }
+	    @include break(38em, 60.625em) {
+	        margin-top: 10em;
+	    }
+	    @include break(60.625em) {
+	        margin-top: 2em;
             margin-left: 10%;
             margin-right: 5%;
         }
@@ -227,11 +252,17 @@ ul, li {
 # Project
 --------------------------------------------------------------*/
 article.detail {
-	margin-top: 2.5em;
+	margin-top: 6em;
+	@include break(30em,60.625em) {
+		margin-top: 8em;
+	}
+	@include break(60.625em) {
+		margin-top: 2em;
+	}
 	h2.project-title {
-		margin-right: 5%;
 		display: block;
 		@include break(60.625em) {
+			margin-right: 5%;
 			width: 64%;
 		    display: inline-block;
 		    text-align: right;
@@ -239,7 +270,7 @@ article.detail {
 		    margin-bottom: 0.5em;
 		}
 		text-align: center;
-		margin-top: 1.5em;
+		margin-top: 0;
 		margin-bottom: 0;
 	}
 	.content-images {
@@ -288,6 +319,18 @@ article.detail {
 # Abour / CV
 --------------------------------------------------------------*/
 .about-page {
+	margin-top: 7em;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    @include break(38em, 48em) {
+    	width: 80%;
+    	margin-top: 10em;
+    }
+    @include break(48em, 60.625em) {
+    	width: 70%;
+    	margin-top: 10em;
+    }
 	@include break(60.625em) {
 		margin-top: 8em;
 		width: 80%;
@@ -295,16 +338,22 @@ article.detail {
 		margin-right: 5%;
 	}
 	.cv {
-		margin-left: 35%;
+		@include break(38em) {
+		    margin-left: 35%;
+		}
+		margin-left: 30%;
 		img {
 			-webkit-transition: all 0.5s ease;
             -moz-transition: all 0.5s ease;
             -o-transition: all 0.5s ease;
             -ms-transition: all 0.5s ease;
             transition: all 0.5s ease;
-			margin-top: 5em;
+			margin-top: 3em;
 			margin-bottom: 5em;
 			width: 7em;
+			@include break(38em) {
+				margin-top: 5em;
+			}
 		}
 	}
 	.cv:hover {
@@ -317,6 +366,8 @@ article.detail {
 # Footer
 --------------------------------------------------------------*/
 .site-footer {
+	position: relative;
+    bottom: 0;
 	text-align: center;
 	width: 100%;
 	position: relative;
