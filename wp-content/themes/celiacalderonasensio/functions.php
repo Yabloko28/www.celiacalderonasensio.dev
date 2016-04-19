@@ -118,7 +118,6 @@ function celiacalderonasensio_scripts() {
 		wp_enqueue_script('angular-resource', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.js', array('angular-core'), '1.0', false);
 		wp_enqueue_script( 'ui-router', 'https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js', array( 'angular-core' ), '1.0', false );
 		wp_enqueue_script( 'ngScripts', get_template_directory_uri() . '/js/angular-theme.js', array( 'ui-router' ), '1.0', false );
-		wp_enqueue_script( 'masonry', get_template_directory_uri() . '/js/angular-masonry.js', array( 'ui-router' ), '1.0', false );
 		wp_localize_script( 'ngScripts', 'appInfo',
 			array(
 				
@@ -130,6 +129,7 @@ function celiacalderonasensio_scripts() {
 			)
 		);
 	wp_enqueue_style( 'celiacalderonasensio-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'main-font', 'https://fonts.googleapis.com/css?family=Arapey' );
 
 	wp_enqueue_script( 'celiacalderonasensio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

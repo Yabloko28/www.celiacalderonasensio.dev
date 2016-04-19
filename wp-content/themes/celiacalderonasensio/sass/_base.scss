@@ -15,6 +15,7 @@ ul, li {
 * {
 	color: $font-color;
 	line-height: 1.5em;
+	font-family: 'Arapey', serif;
 }
 /*--------------------------------------------------------------
 # Header
@@ -180,6 +181,11 @@ box-shadow: 0px 0px 11px 1px rgba(209,207,209,1);
 	width: 100%;
 	position: relative;
 	overflow: hidden;
+	@include break(38em, 60.625em) {
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
 	@include break(60.625em) {
 		width: 55%;
 	    left: 40%;
@@ -188,11 +194,8 @@ box-shadow: 0px 0px 11px 1px rgba(209,207,209,1);
 	}
 	ul.ng-scope {
 	    margin-top: 6em;
-	    @include break(30em, 38em) {
+	    @include break(30em, 60.625em) {
 	        margin-top: 8em;
-	    }
-	    @include break(38em, 60.625em) {
-	        margin-top: 10em;
 	    }
 	    @include break(60.625em) {
 	        margin-top: 2em;
@@ -204,6 +207,11 @@ box-shadow: 0px 0px 11px 1px rgba(209,207,209,1);
 		position: relative;
     	width: 80%;
     	margin: 2em auto;
+    	@include break(30em, 60.625em) {
+    		float: left;
+    		width: 40%;
+    		margin: 1em 5%;
+    	}
     	@include break(60.625em) {
     		float: left;
     		width: 40%;
@@ -215,10 +223,13 @@ box-shadow: 0px 0px 11px 1px rgba(209,207,209,1);
             -o-transition: all 0.5s ease;
             -ms-transition: all 0.5s ease;
             transition: all 0.5s ease;
+-webkit-box-shadow: 0px 0px 11px 1px rgba(184,182,184,1);
+-moz-box-shadow: 0px 0px 11px 1px rgba(184,182,184,1);
+box-shadow: 0px 0px 11px 1px rgba(184,182,184,1);
     	}
     	.overlay {
     		width: 100%;
-        	height: 100%;
+        	height: 60%;
         	position: absolute;
         	top: 40%;
     		opacity: 0;
@@ -229,6 +240,9 @@ box-shadow: 0px 0px 11px 1px rgba(209,207,209,1);
             transition: opacity 1s ease-in-out;
             .project-icon-title {
         		text-align: center;
+        		margin-left: 5%;
+                margin-right: 5%;
+                font-size: 1.85em;
         	}
     	}
     }
@@ -260,6 +274,7 @@ article.detail {
 		margin-top: 2em;
 	}
 	h2.project-title {
+		font-size: 1.65em;
 		display: block;
 		@include break(60.625em) {
 			margin-right: 5%;
@@ -366,6 +381,13 @@ article.detail {
 # Footer
 --------------------------------------------------------------*/
 .site-footer {
+	font-size: 0.8em;
+	p {
+	    color: rgb(125,125,125);
+	}
+	a {
+		color: black;
+	}
 	position: relative;
     bottom: 0;
 	text-align: center;
