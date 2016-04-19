@@ -259,6 +259,11 @@ ul, li {
   list-style: none;
 }
 
+* {
+  color: #323232;
+  line-height: 1.5em;
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -268,7 +273,30 @@ ul, li {
   position: fixed;
   width: 100%;
 }
-.site-header .site-title {
+@media only screen and (min-width: 60.625em) {
+  .site-header {
+    width: 40%;
+  }
+}
+.site-header .site-branding {
+  display: inline-block;
+  width: 70%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 0.5em;
+}
+@media only screen and (min-width: 38em) and (max-width: 60.625em) {
+  .site-header .site-branding {
+    margin-top: 0.5em;
+  }
+}
+@media only screen and (min-width: 60.625em) {
+  .site-header .site-branding {
+    width: 100%;
+    margin: 0;
+  }
+}
+.site-header .site-branding .site-title {
   width: 95%;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -277,36 +305,78 @@ ul, li {
   transition: all 0.5s ease;
 }
 @media only screen and (min-width: 60.625em) {
-  .site-header .site-title {
+  .site-header .site-branding .site-title {
     margin-left: auto;
     margin-top: 1em;
     margin-bottom: 2em;
   }
 }
 @media only screen and (min-width: 60.625em) {
-  .site-header .site-title:hover {
+  .site-header .site-branding .site-title:hover {
     -webkit-filter: blur(2px);
   }
 }
+.site-header .menu-icon {
+  display: inline-block;
+  width: 2em;
+  margin-top: 0.5em;
+  margin-left: 2.5%;
+  margin-right: 5%;
+}
+.site-header .menu-icon img {
+  padding-top: 0.25em;
+}
+@media only screen and (min-width: 30em) and (max-width: 60.625em) {
+  .site-header .menu-icon {
+    width: 3em;
+  }
+}
+@media only screen and (min-width: 38em) and (max-width: 60.625em) {
+  .site-header .menu-icon {
+    margin-left: 7.5%;
+    margin-right: 0;
+  }
+}
 @media only screen and (min-width: 60.625em) {
-  .site-header {
-    width: 40%;
+  .site-header .menu-icon {
+    display: none;
   }
 }
 .site-header .main-navigation {
-  display: none;
-  min-height: 17em;
+  margin-top: 2em;
+  min-height: 13em;
+}
+@media only screen and (min-width: 60.625em) {
+  .site-header .main-navigation {
+    margin-top: 0;
+    min-height: 17em;
+  }
 }
 .site-header .main-navigation .thin, .site-header .main-navigation .bold {
-  margin-left: 4em;
+  margin-left: 3em;
+}
+@media only screen and (min-width: 60.625em) {
+  .site-header .main-navigation .thin, .site-header .main-navigation .bold {
+    margin-left: 4em;
+  }
 }
 .site-header .main-navigation .bold {
   display: none;
 }
 .site-header .main-navigation .fashion-icon img, .site-header .main-navigation .other-projects-icon img, .site-header .main-navigation .about-cv-icon img {
-  height: 4em;
+  height: 3em;
   width: auto;
   margin-right: 10em;
+}
+@media only screen and (min-width: 38em) and (max-width: 60.625em) {
+  .site-header .main-navigation .fashion-icon img, .site-header .main-navigation .other-projects-icon img, .site-header .main-navigation .about-cv-icon img {
+    margin-right: 20em;
+  }
+}
+@media only screen and (min-width: 60.625em) {
+  .site-header .main-navigation .fashion-icon img, .site-header .main-navigation .other-projects-icon img, .site-header .main-navigation .about-cv-icon img {
+    height: 4em;
+  }
 }
 .site-header .main-navigation .fashion-icon:hover .thin, .site-header .main-navigation .other-projects-icon:hover .thin, .site-header .main-navigation .about-cv-icon:hover .thin {
   display: none;
@@ -315,7 +385,6 @@ ul, li {
   display: block;
 }
 .site-header .contact-details {
-  display: none;
   text-align: center;
 }
 .site-header .contact-details .email img, .site-header .contact-details .tel-number img {
@@ -333,9 +402,25 @@ ul, li {
 .site-header .contact-details .tel-number img {
   height: 1em;
   width: auto;
+  padding-bottom: 1em;
 }
 .site-header .contact-details .email:hover img {
   -webkit-filter: blur(2px);
+}
+.site-header .line {
+  display: none;
+}
+@media only screen and (min-width: 60.625em) {
+  .site-header .line {
+    display: block;
+    position: fixed;
+    left: 40%;
+    top: 25%;
+  }
+  .site-header .line img {
+    height: 50vh;
+    width: auto;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -353,17 +438,22 @@ ul, li {
     margin-left: 2.5%;
     margin-right: 2.5%;
   }
+  .site-content ul.ng-scope {
+    margin-top: 2em;
+    margin-left: 10%;
+    margin-right: 5%;
+  }
 }
 .site-content .project-icon {
   position: relative;
   width: 80%;
-  margin: 1em auto;
+  margin: 2em auto;
 }
 @media only screen and (min-width: 60.625em) {
   .site-content .project-icon {
     float: left;
     width: 40%;
-    margin: 1em 0.5em;
+    margin: 1em 5%;
   }
 }
 .site-content .project-icon img {
@@ -395,6 +485,12 @@ ul, li {
 .site-content .project-icon:hover .overlay {
   opacity: 1;
 }
+.site-content p.coming.ng-scope {
+  font-size: 4em;
+  margin-top: 3em;
+  text-align: center;
+  margin-bottom: 5em;
+}
 
 /*--------------------------------------------------------------
 # Project
@@ -403,30 +499,53 @@ article.detail {
   margin-top: 2.5em;
 }
 article.detail h2.project-title {
-  width: 69%;
   margin-right: 5%;
-  display: inline-block;
-  text-align: right;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  display: block;
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 60.625em) {
+  article.detail h2.project-title {
+    width: 64%;
+    display: inline-block;
+    text-align: right;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
 }
 article.detail .content-images {
   text-align: center;
 }
 article.detail .content-images p img {
+  width: 100%;
   margin-top: 2em;
+}
+@media only screen and (min-width: 38em) and (max-width: 60.625em) {
+  article.detail .content-images p img {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
 }
 @media only screen and (min-width: 60.625em) {
   article.detail .content-images p img {
     width: 80%;
     margin-left: 10%;
+    margin-right: 10%;
   }
 }
 article.detail .back-button {
-  width: 10%;
-  margin-left: 15%;
+  margin-left: 5%;
   text-align: left;
-  display: inline-block;
+  display: block;
+}
+@media only screen and (min-width: 60.625em) {
+  article.detail .back-button {
+    margin-left: 15%;
+    width: 10%;
+    display: inline-block;
+  }
 }
 article.detail .back-button img {
   width: 3em;
@@ -441,7 +560,7 @@ article.detail .back-button:hover img {
 }
 
 /*--------------------------------------------------------------
-# Project
+# Abour / CV
 --------------------------------------------------------------*/
 @media only screen and (min-width: 60.625em) {
   .about-page {
@@ -451,6 +570,22 @@ article.detail .back-button:hover img {
     margin-right: 5%;
   }
 }
+.about-page .cv {
+  margin-left: 35%;
+}
+.about-page .cv img {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  width: 7em;
+}
+.about-page .cv:hover img {
+  -webkit-filter: blur(2px);
+}
 
 /*--------------------------------------------------------------
 # Footer
@@ -459,12 +594,18 @@ article.detail .back-button:hover img {
   text-align: center;
   width: 100%;
   position: relative;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+@media only screen and (min-width: 38em) and (max-width: 60.625em) {
+  .site-footer {
+    margin-top: 4em;
+  }
 }
 @media only screen and (min-width: 60.625em) {
   .site-footer {
-    width: 47%;
-    left: 50%;
+    width: 60%;
+    left: 40%;
     margin-top: 5em;
-    margin-bottom: 1em;
   }
 }

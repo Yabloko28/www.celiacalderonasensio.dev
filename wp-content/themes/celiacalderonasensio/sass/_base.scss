@@ -12,6 +12,10 @@ ul, li {
 	padding: 0;
 	list-style: none;
 }
+* {
+	color: $font-color;
+	line-height: 1.5em;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -20,6 +24,23 @@ ul, li {
 	background: white;
 	z-index: 20;
 	position: fixed;
+	width: 100%;
+	@include break(60.625em) {
+    	width: 40%;
+    }
+	.site-branding {
+		display: inline-block;
+        width: 70%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 0.5em;
+        @include break(38em, 60.625em) {
+        	margin-top: 0.5em;
+        }
+        @include break(60.625em) {
+        	width: 100%;
+        	margin: 0;
+        }
     .site-title {
         width: 95%;
         @include break(60.625em) {
@@ -38,23 +59,54 @@ ul, li {
     	    -webkit-filter: blur(2px);
     	}
     }
-    width: 100%;
-    @include break(60.625em) {
-    	width: 40%;
+}
+    .menu-icon {
+    	display: inline-block;
+        width: 2em;
+        margin-top: 0.5em;
+        margin-left: 2.5%;
+        margin-right: 5%;
+        img {
+        	padding-top: 0.25em;
+        }
+        @include break(30em, 60.625em) {
+        	width: 3em;
+        }
+        @include break(38em, 60.625em) {
+        	margin-left: 7.5%;
+            margin-right: 0;
+        }
+        @include break(60.625em) {
+        	display: none;
+        }
     }
     .main-navigation {
-    	display: none;
-    	min-height: 17em;
+    	// display: none;
+    	margin-top: 2em;
+    	@include break(60.625em) {
+    		margin-top: 0;
+    		min-height: 17em;
+    	}
+    	min-height: 13em;
     	.thin, .bold {
-    		margin-left: 4em;
+    		margin-left: 3em;
+    		@include break(60.625em) {
+    			margin-left: 4em;
+    		}
     	}
     	.bold {
     		display: none;
     	}
     	.fashion-icon img, .other-projects-icon img, .about-cv-icon img {
-    		height: 4em;
+    		height: 3em;
     		width: auto;
     		margin-right: 10em;
+    		@include break(38em, 60.625em) {
+    			margin-right: 20em;
+    		}
+    		@include break(60.625em) {
+    			height: 4em;
+    		}
     	}
     	.fashion-icon:hover, .other-projects-icon:hover, .about-cv-icon:hover {
     		.thin {
@@ -66,7 +118,7 @@ ul, li {
     	}
     }
     .contact-details {
-    	display: none;
+    	// display: none;
     	text-align: center;
     	.email img, .tel-number img {
     		margin-top: 1em; 
@@ -83,12 +135,26 @@ ul, li {
         .tel-number img {
             height: 1em;
             width: auto;
+            padding-bottom: 1em;
         }
         .email:hover {
         	img {
         	    -webkit-filter: blur(2px);
             }
         }
+    }
+        .line {
+    	display: none;
+    	@include break(60.625em) {
+    		display: block;
+    		position: fixed;
+    		left: 40%;
+    		top: 25%;
+    		img {
+    			height: 50vh;
+    			width: auto;
+    		}
+    	}
     }
 }
 /*--------------------------------------------------------------
@@ -103,15 +169,20 @@ ul, li {
 	    left: 40%;
 	    margin-left: 2.5%;
 	    margin-right: 2.5%;
+	    ul.ng-scope {
+            margin-top: 2em;
+            margin-left: 10%;
+            margin-right: 5%;
+        }
 	}
 	.project-icon {
 		position: relative;
     	width: 80%;
-    	margin: 1em auto;
+    	margin: 2em auto;
     	@include break(60.625em) {
     		float: left;
     		width: 40%;
-    		margin: 1em 0.5em;
+    		margin: 1em 5%;
     	}
     	img {
     		-webkit-transition: all 0.5s ease;
@@ -145,6 +216,12 @@ ul, li {
         	opacity: 1;
         }
     }
+    p.coming.ng-scope {
+		font-size: 4em;
+        margin-top: 3em;
+        text-align: center;
+        margin-bottom: 5em;
+	}
 }
 /*--------------------------------------------------------------
 # Project
@@ -152,28 +229,46 @@ ul, li {
 article.detail {
 	margin-top: 2.5em;
 	h2.project-title {
-		width: 69%;
 		margin-right: 5%;
-		display: inline-block;
-		text-align: right;
-		margin-top: 1em;
-		margin-bottom: 0.5em;
+		display: block;
+		@include break(60.625em) {
+			width: 64%;
+		    display: inline-block;
+		    text-align: right;
+		    margin-top: 1em;
+		    margin-bottom: 0.5em;
+		}
+		text-align: center;
+		margin-top: 1.5em;
+		margin-bottom: 0;
 	}
 	.content-images {
 		text-align: center;
 	}
 	.content-images p img {
-		@include break(60.625em) {
-            width: 80%;
-            margin-left: 10%;
+		width: 100%;
+		@include break(38em, 60.625em) {
+            width: 70%;
+            margin-left: 15%;
+            margin-right: 15%;
         }
+        @include break(60.625em) {
+        	width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
 		margin-top: 2em;
 	}
 	.back-button {
-		width: 10%;
-		margin-left: 15%;
+		margin-left: 5%;
 		text-align: left;
-		display: inline-block;
+		display: block;
+		@include break(60.625em) {
+			margin-left: 15%;
+			width: 10%;
+		    display: inline-block;
+		}
 		img {
 		    width: 3em;
 		    -webkit-transition: all 0.5s ease;
@@ -190,7 +285,7 @@ article.detail {
 	}
 }
 /*--------------------------------------------------------------
-# Project
+# Abour / CV
 --------------------------------------------------------------*/
 .about-page {
 	@include break(60.625em) {
@@ -198,6 +293,24 @@ article.detail {
 		width: 80%;
 		margin-left: 15%;
 		margin-right: 5%;
+	}
+	.cv {
+		margin-left: 35%;
+		img {
+			-webkit-transition: all 0.5s ease;
+            -moz-transition: all 0.5s ease;
+            -o-transition: all 0.5s ease;
+            -ms-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+			margin-top: 5em;
+			margin-bottom: 5em;
+			width: 7em;
+		}
+	}
+	.cv:hover {
+		img {
+			-webkit-filter: blur(2px);
+		}
 	}
 }
 /*--------------------------------------------------------------
@@ -207,10 +320,14 @@ article.detail {
 	text-align: center;
 	width: 100%;
 	position: relative;
+	margin-top: 2em;
+    margin-bottom: 1em;
+	@include break(38em, 60.625em) {
+	    margin-top: 4em;
+	}
 	@include break(60.625em) {
-		width: 47%;
-	    left: 50%;
+		width: 60%;
+	    left: 40%;
 	    margin-top: 5em;
-	    margin-bottom: 1em;
 	}
 }
